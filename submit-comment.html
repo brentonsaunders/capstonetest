@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CR Comment Analyzer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="module" src="js/submitComment.js"></script>
+    </head>
+    <body>
+        <div id="site">
+            <header>
+                <h1>CR Comment Analyzer</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">About</a></li>
+                        <li><a href="submit-comment.html">Submit Comment</a></li>
+                        <li><a href="my-comments.html">My Comments</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="main-content submit-comment">
+                    <h2>Submit Comment</h2>
+                    <form id="submit-comment-form">
+                        <div class="form-field-row">
+                            <label for="crId">CR ID</label>
+                            <input class="form-field" id="crId" name="crId" type="text" value="CR-12345678">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="revisionNumber">Revision Number</label>
+                            <select class="form-field" id="revisionNumber" name="revisionNumber">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-field-row">
+                            <label for="fileName">File Name</label>
+                            <input class="form-field" id="fileName" name="fileName" type="text" value="test">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="lineNumber">Line Number</label>
+                            <input class="form-field" id="lineNumber" name="lineNumber" type="text" value="34">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="alias">Comment Author (Alias)</label>
+                            <input class="form-field" id="alias" name="alias" type="text" value="saubrent">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="date">Comment Date (MM/DD/YYY)</label>
+                            <input class="form-field" id="date" name="date" type="text" value="04/19/2023">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="comment">Comment Text</label>
+                            <textarea class="form-field" id="comment" name="comment">test</textarea>
+                        </div>
+                        <button type="button" id="submit-button" class="button">Submit</button>
+                    </form>
+                    <div id="submit-comment-success">
+                        <p>The comment was successfully submitted, and is now being processed.</p>
+                        <code>
+                            
+                        </code>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

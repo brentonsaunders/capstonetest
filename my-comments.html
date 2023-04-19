@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CR Comment Analyzer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="module" src="js/findComments.js"></script>
+    </head>
+    <body>
+        <div id="site">
+            <header>
+                <h1>CR Comment Analyzer</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">About</a></li>
+                        <li><a href="submit-comment.html">Submit Comment</a></li>
+                        <li><a href="my-comments.html">My Comments</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="main-content my-comments">
+                    <h2>Find Comments</h2>
+                    <p>Find comments for user </p>
+                    <form id="find-comments-form">
+                        <div class="form-field-row">
+                            <label for="crId">CR ID<strong>(*)</strong></label>
+                            <input class="form-field" id="crId" name="crId" type="text" value="CR-12345678">
+                        </div>
+                        <div class="form-field-row">
+                            <label for="revisionNumber">Revision Number<strong>(*)</strong></label>
+                            <select class="form-field" id="revisionNumber" name="revisionNumber">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-field-row sentiment">
+                            <label for="crId">Sentiment</label>
+                            <select class="form-field" id="sentiment" name="sentitment">
+                                <option></option>
+                                <option value="POSITIVE">POSITIVE</option>
+                                <option value="NEGATIVE">NEGATIVE</option>
+                                <option value="MIXED">MIXED</option>
+                                <option value="NEUTRAL">NEUTRAL</option>
+                            </select>
+                        </div>
+                        <div class="form-field-row score">
+                            <label for="crId">Minimum Score</label>
+                            <input class="form-field" id="minScore" name="minScore" type="text">
+                        </div>
+                        <div class="form-field-row specific">
+                            <label><input type="checkbox" id="findSpecific"><span>Find Specific Comment</span></label>
+                        </div>
+                        <div class="form-field-row file">
+                            <label for="fileName">File Name</label>
+                            <input class="form-field" id="fileName" name="fileName" type="text">
+                        </div>
+                        <div class="form-field-row line">
+                            <label for="lineNumber">Line Number</label>
+                            <input class="form-field" id="lineNumber" name="lineNumber" type="text">
+                        </div>
+                        <button type="button" id="search-button" class="button">Search</button>
+                    </form>
+                    <div id="search-results" class="none">
+                        <p></p>
+                        <table id="comments">
+                            <thead>
+                                <tr>
+                                    <th>Date<button class="sort-arrow"></button></th>
+                                    <th>File</th>
+                                    <th>Line</th>
+                                    <th>Sentiment</th>
+                                    <th>Comment</th>
+                                    <th>Key Phrases</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

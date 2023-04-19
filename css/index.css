@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img, picture, svg, video {
+    max-width: 100%;
+    display: block;
+}
+
+input, select, textarea {
+    outline: transparent;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#site {
+    --color-gray-1: rgb(230, 230, 230);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 5.6rem;
+    background-color: var(--color-gray-1);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding-inline: 2rem;
+}
+
+header h1 {
+    font-size: 160%;
+    font-weight: 600;
+    color: rgb(100, 100, 100);
+    margin-right: 10rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 5rem;
+}
+
+header nav ul a {
+    font-size: 150%;
+    font-weight: 600;
+    color: rgb(140, 140, 140);
+}
+
+main {
+    padding: 2rem;
+}
+
+.main-content {
+    font-size: 1.4rem;
+}
+
+.main-content h2 {
+    font-size: 1.6rem;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-field-row {
+    display: flex;
+}
+
+.form-field-row label {
+    width: 20rem;
+}
+
+.form-field-row.error :is(input, textarea, select) {
+    border-color: red;
+}
+
+.form-field-row span.error {
+    display: none;
+}
+
+.form-field-row.error span.error {
+    display: block;
+    margin-left: 1rem;
+    color: red;
+}
+
+.button {
+    display: block;
+    background-color: rgb(0, 162, 232);
+    color: white;
+    font-weight: bold;
+    border: 0.2rem solid rgb(0, 130, 186);
+    width: min-content;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(rgb(0, 162, 232), rgb(0, 130, 186));
+}
+
+.button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.button.loading::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image: url('../img/loading-icon.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.8rem;
+    
+}
+
+.submit-comment textarea[name=comment] {
+    min-width: 50rem;
+    min-height: 15rem;
+}
+
+.submit-comment :is(input, select) {
+    height: min-content;
+}
+
+#submit-comment-success {
+    display: none;
+}
+
+.submit-comment.comment-submitted #submit-comment-success {
+    display: block;
+}
+
+.submit-comment.comment-submitted #submit-comment-form {
+    display: none;
+}
+
+.about p {
+    line-height: 2.6rem;
+    margin-bottom: 4rem;
+}
+
+#search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+#comments {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+#comments :is(td, th) {
+    text-align: left;
+    padding: 2rem 1rem;
+}
+
+#comments thead {
+    background-color: var(--color-gray-1);
+    font-weight: bold;
+}
+
+#comments tr {
+    border-top: 1px solid rgb(200, 200, 200);
+}
+
+form label strong {
+    color: red;
+    font-weight: 500;
+}
+
+#search-results.none table {
+    display: none;
+}
+
+#midway {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+#midway form {
+    display: flex;
+    width: 350px;
+    height: 500px;
+    padding: 15px;
+    font-size: 1.4rem;
+}
+
+#midway img {
+    width: 140px;
+    margin-top: auto;
+    align-self: center;
+}
+
+#midway button {
+    background-color: rgb(250, 176, 57);
+    border: none;
+    font-weight: bold;
+}
+
+#midway a {
+    color: rgb(0, 162, 232);
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+#midway :is(input, button) {
+    height: 3.2rem;
+    padding-inline: 0.8rem;
+}
+
+#midway label {
+    display: flex;
+}
+
+#midway h1 {
+    font-size: 3rem;
+}
+
+.my-comments h2 + p {
+    margin-bottom: 3rem;
+}
+
+.form-field-row.specific input {
+    margin-right: 1rem;
+}
+
+#find-comments-form :is(.form-field-row.file, .form-field-row.line),
+#find-comments-form.specific :is(.form-field-row.sentiment, .form-field-row.score)  {
+    display: none;
+}
+
+#find-comments-form.specific :is(.form-field-row.file, .form-field-row.line) {
+    display: flex;
+}
+
